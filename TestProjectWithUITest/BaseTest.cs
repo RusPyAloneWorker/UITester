@@ -16,7 +16,7 @@ namespace TestProjectWithUITest
 
         private string RecordsDirectory => Path.Combine(BaseProjectDirectory.Parent!.FullName, _configuration["VideoRecordsProjectDirectoryPath"]);
 
-        private string? chromeExecutable => _configuration["ChromeExecutablePath"]; // @"C:\Users\almetov.mr\AppData\Local\ms-playwright\chromium-1148\chrome-win\chrome.exe";
+        private string? chromeExecutable => _configuration["ChromeExecutablePath"]; 
 
         protected UiTest _uiTest;
 
