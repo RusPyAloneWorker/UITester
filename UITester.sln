@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UITester", "UITester\UITester.csproj", "{4EB8D386-CFAB-48C5-ADE5-2E3C97797469}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectWithUITest", "TestProjectWithUITest\TestProjectWithUITest.csproj", "{529E257E-CB21-44D4-87C3-7A263248DCA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EB8D386-CFAB-48C5-ADE5-2E3C97797469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB8D386-CFAB-48C5-ADE5-2E3C97797469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB8D386-CFAB-48C5-ADE5-2E3C97797469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB8D386-CFAB-48C5-ADE5-2E3C97797469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529E257E-CB21-44D4-87C3-7A263248DCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529E257E-CB21-44D4-87C3-7A263248DCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529E257E-CB21-44D4-87C3-7A263248DCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529E257E-CB21-44D4-87C3-7A263248DCA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4D8DD50-C8A4-4106-AF08-9FD10797A133}
+	EndGlobalSection
+EndGlobal
