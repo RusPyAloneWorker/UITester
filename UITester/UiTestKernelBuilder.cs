@@ -44,7 +44,8 @@ public class UiTestKernelBuilder
 	{
 		if (!Directory.Exists(videoDirPath))
 		{
-			throw new DirectoryNotFoundException($"Directory {videoDirPath} not found.");
+			//throw new DirectoryNotFoundException($"Directory {videoDirPath} not found.");
+			Directory.CreateDirectory(videoDirPath);
 		}
 		
 		ArgumentOutOfRangeException.ThrowIfNegativeOrZero(resolution.Item1);
