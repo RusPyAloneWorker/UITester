@@ -19,11 +19,11 @@ jobs:
       - name: cli
         run: dotnet tool install --global Microsoft.Playwright.CLI
       - name: install playwright
-        run: playwright install
+        run: playwright install chromium
       - name: Run your tests
         run: dotnet test
       - name: Upload Test Records
         uses: actions/upload-artifact@v3
         with:
           name: TestRecords
-          path: ./TestRecord
+          path: ./UITester/UITester/TestRecords
