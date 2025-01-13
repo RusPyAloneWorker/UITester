@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 namespace UITester;
 
 /// <summary>
-/// Тестироващик сценариев.
+/// Тестировщик сценариев.
 /// </summary>
 public interface ITestScenario
 {
