@@ -20,7 +20,5 @@ jobs:
         run: dotnet tool install --global Microsoft.Playwright.CLI
       - name: install playwright
         run: playwright install
-      - name: Ensure browsers are installed
-        run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
       - name: Run your tests
         run: dotnet test
