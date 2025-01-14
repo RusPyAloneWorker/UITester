@@ -7,10 +7,6 @@ namespace TestProjectWithUITest;
 
 public class SignInGithubScenario : ITestScenario
 {
-	private readonly string _login = "DioBrando2003@yandex.ru";
-    private readonly string _password = "DotNetMars2023X";
-    private readonly string _userName = "RusPyAloneWorker";
-
     private GithubHomePage GithubHomePage;
     private GithubSignInPage GithubSignInPage;
     private GithubUserHomePage GithubUserHomePage;
