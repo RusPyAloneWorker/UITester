@@ -5,7 +5,7 @@ namespace TestProjectWithUITest;
 public class GithubHomePageTests: BaseTest
 {
 	[TestCase(typeof(OpenGithubSponsorsScenario))]
-	//[TestCase(typeof(SignInGithubScenario))]
+	//[TestCase(typeof(SignInGithubScenario))
 	[TestCase(typeof(OpenAiScenario))]
 	public async Task GithubTests(Type testScenario)
 	{
