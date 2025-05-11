@@ -31,14 +31,16 @@ jobs:
 
       - name: Start ASP.NET Core application
         run: |
-          nohup dotnet run --project ./Path/To/Your/WebProject > output.log 2>&1 &
+          nohup dotnet run --project ./WebApplication1 > output.log 2>&1 &
         working-directory: ./
 
       - name: Wait for application to be ready
-        uses: jakejarvis/wait-action@v0.1.0
+        uses: cygnetdigital/wait_for_response@v2.0.0
         with:
-          url: http://localhost:5176
-          timeout: 60
+          url: 'http://localhost:5176'
+          responseCode: '200'
+          timeout: 60000
+          interval: 500
 
       - name: Run Playwright tests
         run: dotnet test
