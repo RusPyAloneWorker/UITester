@@ -1,0 +1,26 @@
+﻿@{
+ViewData["Title"] = "Калькулятор";
+}
+
+<h2 class="text-center mt-4">Калькулятор</h2>
+
+<form class="calculator-form" method="post" asp-controller="Calculator" asp-action="Result">
+	<div>
+		<label>Число 1:</label>
+		<input type="number" step="any" name="number1" required />
+	</div>
+	<div>
+		<label>Операция:</label>
+		<select name="operation">
+			<option value="Add">+</option>
+			<option value="Subtract">−</option>
+			<option value="Multiply">×</option>
+			<option value="Divide">÷</option>
+		</select>
+	</div>
+	<div>
+		<label>Число 2:</label>
+		<input type="number" step="any" name="number2" required />
+	</div>
+	<button type="submit">Вычислить</button>
+</form>

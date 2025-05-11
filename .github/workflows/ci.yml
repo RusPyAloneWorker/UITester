@@ -20,6 +20,18 @@ jobs:
         run: dotnet tool install --global Microsoft.Playwright.CLI
       - name: install playwright
         run: playwright install chromium
+      # 🔽 Запуск приложения в фоне
+      - name: Start ASP.NET Core App
+        run: |
+          nohup dotnet run --project ./Path/To/Your/WebProject > output.log 2>&1 &
+        working-directory: ./ # или укажи путь, если проект в подпапке
+
+      # 🔽 Ожидание, пока сайт поднимется на http://localhost:5176
+      - name: Wait for app to be ready
+        uses: jakejarvis/wait-action@v0.1.0
+        with:
+          url: http://localhost:5176
+          timeout: 60 # секунд
       - name: Run your tests
         run: dotnet test
       - name: Upload Test Records

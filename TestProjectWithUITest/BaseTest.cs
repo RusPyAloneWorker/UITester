@@ -1,10 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SixLabors.ImageSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UITester;
 
 namespace TestProjectWithUITest
@@ -20,7 +14,7 @@ namespace TestProjectWithUITest
 
         protected UiTest _uiTest;
 
-        private const string BaseUrl = @"https://github.com/";
+        private const string BaseUrl = @"http://localhost:5176/";
 
         private IConfiguration _configuration;
 
