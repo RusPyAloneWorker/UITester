@@ -1,25 +1,33 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup dotnet
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Build & Install
+
+      - name: Build solution
         run: dotnet build
-      - name: cli
+
+      - name: Install Playwright CLI
         run: dotnet tool install --global Microsoft.Playwright.CLI
-      - name: install playwright
+
+      - name: Install Playwright Browsers
         run: playwright install chromium
+
       # 🔽 Запуск приложения в фоне
       - name: Start ASP.NET Core App
         run: |
@@ -32,8 +40,11 @@ jobs:
         with:
           url: http://localhost:5176
           timeout: 60 # секунд
-      - name: Run your tests
+
+      # ✅ Запуск Playwright тестов
+      - name: Run Tests
         run: dotnet test
+
       - name: Upload Test Records
         uses: actions/upload-artifact@v3
         with:
