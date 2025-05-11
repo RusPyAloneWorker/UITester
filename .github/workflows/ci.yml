@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup dotnet
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
@@ -25,27 +26,24 @@ jobs:
       - name: Install Playwright CLI
         run: dotnet tool install --global Microsoft.Playwright.CLI
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: playwright install chromium
 
-      # 🔽 Запуск приложения в фоне
-      - name: Start ASP.NET Core App
+      - name: Start ASP.NET Core application
         run: |
           nohup dotnet run --project ./Path/To/Your/WebProject > output.log 2>&1 &
-        working-directory: ./ # или укажи путь, если проект в подпапке
+        working-directory: ./
 
-      # 🔽 Ожидание, пока сайт поднимется на http://localhost:5176
-      - name: Wait for app to be ready
+      - name: Wait for application to be ready
         uses: jakejarvis/wait-action@v0.1.0
         with:
           url: http://localhost:5176
-          timeout: 60 # секунд
+          timeout: 60
 
-      # ✅ Запуск Playwright тестов
-      - name: Run Tests
+      - name: Run Playwright tests
         run: dotnet test
 
-      - name: Upload Test Records
+      - name: Upload test artifacts
         uses: actions/upload-artifact@v4
         with:
           name: TestRecords
