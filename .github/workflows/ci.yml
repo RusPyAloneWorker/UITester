@@ -31,16 +31,22 @@ jobs:
 
       - name: Start ASP.NET Core application
         run: |
-          nohup dotnet run --project ./WebApplication1 > output.log 2>&1 &
+          nohup dotnet run --project ./Path/To/Your/WebProject --urls http://localhost:5176 > output.log 2>&1 &
         working-directory: ./
 
       - name: Wait for application to be ready
-        uses: cygnetdigital/wait_for_response@v2.0.0
-        with:
-          url: 'http://localhost:5176'
-          responseCode: '200'
-          timeout: 60000
-          interval: 500
+        run: |
+          for i in {1..30}; do
+            if curl -s http://localhost:5176 > /dev/null; then
+              echo "Application is up!"
+              break
+            fi
+            echo "Waiting for the application to start..."
+            sleep 2
+          done
+
+      - name: Display application logs
+        run: cat output.log
 
       - name: Run Playwright tests
         run: dotnet test
