@@ -6,7 +6,7 @@ public class UnitTests: BaseTest
 {
 	private static IEnumerable<Type> GetTestScenarios()
 	{
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 50; i++)
 		{
 			yield return typeof(Calculator2Minus2Result);
 		}
