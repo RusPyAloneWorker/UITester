@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
 			var result = operation switch
 			{
 				"Add" => number1 + number2,
-				"Subtract" => number1 - number2,
+				"Subtract" => number1 + number2,
 				"Multiply" => number1 * number2,
 				"Divide" => number2 != 0 ? number1 / number2 : double.NaN,
 				_ => 0
